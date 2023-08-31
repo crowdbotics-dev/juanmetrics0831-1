@@ -1,120 +1,143 @@
-import axios from "axios";
+import axios from "axios"
 const juanmetricsAPI = axios.create({
   baseURL: "https://juanmetrics0831-1.botics.co",
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json"
-  }
-});
-
+  headers: { Accept: "application/json", "Content-Type": "application/json" }
+})
 function api_docs_schema_retrieve(payload) {
   return juanmetricsAPI.get(`/api-docs/schema/`, {
-    params: {
-      lang: payload.lang
-    }
-  });
+    params: { lang: payload.lang }
+  })
 }
-
 function api_v1_azul_list(payload) {
-  return juanmetricsAPI.get(`/api/v1/azul/`);
+  return juanmetricsAPI.get(`/api/v1/azul/`)
 }
-
 function api_v1_azul_create(payload) {
-  return juanmetricsAPI.post(`/api/v1/azul/`, payload);
+  return juanmetricsAPI.post(`/api/v1/azul/`, payload)
 }
-
 function api_v1_azul_retrieve(payload) {
-  return juanmetricsAPI.get(`/api/v1/azul/${payload.id}/`);
+  return juanmetricsAPI.get(`/api/v1/azul/${payload.id}/`)
 }
-
 function api_v1_azul_update(payload) {
-  return juanmetricsAPI.put(`/api/v1/azul/${payload.id}/`, payload);
+  return juanmetricsAPI.put(`/api/v1/azul/${payload.id}/`, payload)
 }
-
 function api_v1_azul_partial_update(payload) {
-  return juanmetricsAPI.patch(`/api/v1/azul/${payload.id}/`, payload);
+  return juanmetricsAPI.patch(`/api/v1/azul/${payload.id}/`, payload)
 }
-
 function api_v1_azul_destroy(payload) {
-  return juanmetricsAPI.delete(`/api/v1/azul/${payload.id}/`);
+  return juanmetricsAPI.delete(`/api/v1/azul/${payload.id}/`)
 }
-
 function api_v1_login_create(payload) {
-  return juanmetricsAPI.post(`/api/v1/login/`, payload);
+  return juanmetricsAPI.post(`/api/v1/login/`, payload)
 }
-
 function api_v1_signup_create(payload) {
-  return juanmetricsAPI.post(`/api/v1/signup/`, payload);
+  return juanmetricsAPI.post(`/api/v1/signup/`, payload)
 }
-
 function modules_articles_article_list(payload) {
-  return juanmetricsAPI.get(`/modules/articles/article/`);
+  return juanmetricsAPI.get(`/modules/articles/article/`)
 }
-
 function modules_articles_article_create(payload) {
-  return juanmetricsAPI.post(`/modules/articles/article/`, payload);
+  return juanmetricsAPI.post(`/modules/articles/article/`, payload)
 }
-
 function modules_articles_article_retrieve(payload) {
-  return juanmetricsAPI.get(`/modules/articles/article/${payload.id}/`);
+  return juanmetricsAPI.get(`/modules/articles/article/${payload.id}/`)
 }
-
 function modules_articles_article_update(payload) {
-  return juanmetricsAPI.put(`/modules/articles/article/${payload.id}/`, payload);
+  return juanmetricsAPI.put(`/modules/articles/article/${payload.id}/`, payload)
 }
-
 function modules_articles_article_partial_update(payload) {
-  return juanmetricsAPI.patch(`/modules/articles/article/${payload.id}/`, payload);
+  return juanmetricsAPI.patch(
+    `/modules/articles/article/${payload.id}/`,
+    payload
+  )
 }
-
 function modules_articles_article_destroy(payload) {
-  return juanmetricsAPI.delete(`/modules/articles/article/${payload.id}/`);
+  return juanmetricsAPI.delete(`/modules/articles/article/${payload.id}/`)
 }
-
+function modules_two_factor_authentication_2fa_retrieve(payload) {
+  return juanmetricsAPI.get(`/modules/two-factor-authentication/2fa`)
+}
+function modules_two_factor_authentication_2fa_create(payload) {
+  return juanmetricsAPI.post(`/modules/two-factor-authentication/2fa`)
+}
+function modules_two_factor_authentication_twofactorauth_list(payload) {
+  return juanmetricsAPI.get(`/modules/two-factor-authentication/twofactorauth/`)
+}
+function modules_two_factor_authentication_twofactorauth_create(payload) {
+  return juanmetricsAPI.post(
+    `/modules/two-factor-authentication/twofactorauth/`,
+    payload
+  )
+}
+function modules_two_factor_authentication_twofactorauth_retrieve(payload) {
+  return juanmetricsAPI.get(
+    `/modules/two-factor-authentication/twofactorauth/${payload.id}/`
+  )
+}
+function modules_two_factor_authentication_twofactorauth_update(payload) {
+  return juanmetricsAPI.put(
+    `/modules/two-factor-authentication/twofactorauth/${payload.id}/`,
+    payload
+  )
+}
+function modules_two_factor_authentication_twofactorauth_partial_update(
+  payload
+) {
+  return juanmetricsAPI.patch(
+    `/modules/two-factor-authentication/twofactorauth/${payload.id}/`,
+    payload
+  )
+}
+function modules_two_factor_authentication_twofactorauth_destroy(payload) {
+  return juanmetricsAPI.delete(
+    `/modules/two-factor-authentication/twofactorauth/${payload.id}/`
+  )
+}
+function modules_two_factor_authentication_twofactorauth_send_otp_create(
+  payload
+) {
+  return juanmetricsAPI.post(
+    `/modules/two-factor-authentication/twofactorauth/send_otp/`,
+    payload
+  )
+}
+function modules_two_factor_authentication_verify_destroy(payload) {
+  return juanmetricsAPI.delete(
+    `/modules/two-factor-authentication/verify/${payload.id}/`
+  )
+}
 function rest_auth_login_create(payload) {
-  return juanmetricsAPI.post(`/rest-auth/login/`, payload);
+  return juanmetricsAPI.post(`/rest-auth/login/`, payload)
 }
-
 function rest_auth_logout_retrieve(payload) {
-  return juanmetricsAPI.get(`/rest-auth/logout/`);
+  return juanmetricsAPI.get(`/rest-auth/logout/`)
 }
-
 function rest_auth_logout_create(payload) {
-  return juanmetricsAPI.post(`/rest-auth/logout/`);
+  return juanmetricsAPI.post(`/rest-auth/logout/`)
 }
-
 function rest_auth_password_change_create(payload) {
-  return juanmetricsAPI.post(`/rest-auth/password/change/`, payload);
+  return juanmetricsAPI.post(`/rest-auth/password/change/`, payload)
 }
-
 function rest_auth_password_reset_create(payload) {
-  return juanmetricsAPI.post(`/rest-auth/password/reset/`, payload);
+  return juanmetricsAPI.post(`/rest-auth/password/reset/`, payload)
 }
-
 function rest_auth_password_reset_confirm_create(payload) {
-  return juanmetricsAPI.post(`/rest-auth/password/reset/confirm/`, payload);
+  return juanmetricsAPI.post(`/rest-auth/password/reset/confirm/`, payload)
 }
-
 function rest_auth_registration_create(payload) {
-  return juanmetricsAPI.post(`/rest-auth/registration/`, payload);
+  return juanmetricsAPI.post(`/rest-auth/registration/`, payload)
 }
-
 function rest_auth_registration_verify_email_create(payload) {
-  return juanmetricsAPI.post(`/rest-auth/registration/verify-email/`, payload);
+  return juanmetricsAPI.post(`/rest-auth/registration/verify-email/`, payload)
 }
-
 function rest_auth_user_retrieve(payload) {
-  return juanmetricsAPI.get(`/rest-auth/user/`);
+  return juanmetricsAPI.get(`/rest-auth/user/`)
 }
-
 function rest_auth_user_update(payload) {
-  return juanmetricsAPI.put(`/rest-auth/user/`, payload);
+  return juanmetricsAPI.put(`/rest-auth/user/`, payload)
 }
-
 function rest_auth_user_partial_update(payload) {
-  return juanmetricsAPI.patch(`/rest-auth/user/`, payload);
+  return juanmetricsAPI.patch(`/rest-auth/user/`, payload)
 }
-
 export const apiService = {
   api_docs_schema_retrieve,
   api_v1_azul_list,
@@ -131,6 +154,16 @@ export const apiService = {
   modules_articles_article_update,
   modules_articles_article_partial_update,
   modules_articles_article_destroy,
+  modules_two_factor_authentication_2fa_retrieve,
+  modules_two_factor_authentication_2fa_create,
+  modules_two_factor_authentication_twofactorauth_list,
+  modules_two_factor_authentication_twofactorauth_create,
+  modules_two_factor_authentication_twofactorauth_retrieve,
+  modules_two_factor_authentication_twofactorauth_update,
+  modules_two_factor_authentication_twofactorauth_partial_update,
+  modules_two_factor_authentication_twofactorauth_destroy,
+  modules_two_factor_authentication_twofactorauth_send_otp_create,
+  modules_two_factor_authentication_verify_destroy,
   rest_auth_login_create,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
@@ -142,4 +175,4 @@ export const apiService = {
   rest_auth_user_retrieve,
   rest_auth_user_update,
   rest_auth_user_partial_update
-};
+}
